@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="900" height="560" fill="#0f172a"/>
+  <text x="450" y="30" fill="#f1f5f9" font-size="16" font-weight="bold" text-anchor="middle">SomNet Solutions — Static Routing: HQ ↔ Branch (Lab 08)</text>
+
+  <text x="220" y="60" fill="#64748b" font-size="12" text-anchor="middle">HQ Office</text>
+  <text x="680" y="60" fill="#64748b" font-size="12" text-anchor="middle">Branch Office</text>
+
+  <!-- HQ-R1 -->
+  <rect x="140" y="80" width="160" height="65" rx="8" fill="#1e293b" stroke="#facc15" stroke-width="2.5"/>
+  <text x="220" y="105" fill="#e2e8f0" font-size="14" font-weight="bold" text-anchor="middle">HQ-R1</text>
+  <text x="220" y="122" fill="#94a3b8" font-size="9" text-anchor="middle">Gi0/1: 192.168.100.1/30</text>
+  <text x="220" y="135" fill="#94a3b8" font-size="9" text-anchor="middle">(WAN link)</text>
+
+  <!-- BRANCH-R1 -->
+  <rect x="600" y="80" width="160" height="65" rx="8" fill="#1e293b" stroke="#facc15" stroke-width="2.5"/>
+  <text x="680" y="105" fill="#e2e8f0" font-size="14" font-weight="bold" text-anchor="middle">BRANCH-R1</text>
+  <text x="680" y="122" fill="#94a3b8" font-size="9" text-anchor="middle">Gi0/1: 192.168.100.2/30</text>
+  <text x="680" y="135" fill="#94a3b8" font-size="9" text-anchor="middle">(WAN link)</text>
+
+  <!-- WAN link -->
+  <line x1="300" y1="110" x2="600" y2="110" stroke="#f87171" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="450" y="98" fill="#f87171" font-size="12" font-weight="bold" text-anchor="middle">WAN LINK — 192.168.100.0/30</text>
+
+  <!-- HQ-SW1 -->
+  <rect x="60" y="200" width="140" height="55" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="130" y="225" fill="#e2e8f0" font-size="12" font-weight="bold" text-anchor="middle">HQ-SW1</text>
+  <text x="130" y="240" fill="#94a3b8" font-size="9" text-anchor="middle">VLAN 10/20/99</text>
+  <line x1="180" y1="145" x2="150" y2="200" stroke="#facc15" stroke-width="2"/>
+
+  <!-- HQ PCs -->
+  <g>
+    <rect x="30" y="300" width="70" height="50" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="65" y="330" fill="#e2e8f0" font-size="10" text-anchor="middle">HR/Sales</text>
+    <text x="65" y="342" fill="#94a3b8" font-size="9" text-anchor="middle">.10.0/29 .20.0/28</text>
+  </g>
+  <line x1="65" y1="300" x2="110" y2="255" stroke="#64748b" stroke-width="1.5"/>
+
+  <!-- BRANCH-SW1 -->
+  <rect x="600" y="200" width="140" height="55" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="670" y="225" fill="#e2e8f0" font-size="12" font-weight="bold" text-anchor="middle">BRANCH-SW1</text>
+  <text x="670" y="240" fill="#94a3b8" font-size="9" text-anchor="middle">VLAN 30/99</text>
+  <line x1="660" y1="145" x2="670" y2="200" stroke="#facc15" stroke-width="2"/>
+
+  <!-- BRANCH-R1 LAN interface -->
+  <text x="680" y="170" fill="#94a3b8" font-size="9" text-anchor="middle">Gi0/0: 192.168.30.1/29</text>
+
+  <!-- Branch PCs -->
+  <g>
+    <rect x="590" y="300" width="70" height="50" rx="6" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
+    <text x="625" y="325" fill="#e2e8f0" font-size="11" text-anchor="middle">PC7</text>
+    <text x="625" y="338" fill="#94a3b8" font-size="9" text-anchor="middle">.30.2</text>
+  </g>
+  <g>
+    <rect x="680" y="300" width="70" height="50" rx="6" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
+    <text x="715" y="325" fill="#e2e8f0" font-size="11" text-anchor="middle">PC8</text>
+    <text x="715" y="338" fill="#94a3b8" font-size="9" text-anchor="middle">.30.3</text>
+  </g>
+  <line x1="625" y1="300" x2="650" y2="255" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="715" y1="300" x2="690" y2="255" stroke="#64748b" stroke-width="1.5"/>
+
+  <text x="450" y="420" fill="#64748b" font-size="12" text-anchor="middle">HQ-R1 needs specific static routes to 192.168.30.0/29 (Branch LAN)</text>
+  <text x="450" y="440" fill="#64748b" font-size="12" text-anchor="middle">BRANCH-R1 only has ONE way out — uses a single default route instead of listing every HQ subnet</text>
+  <text x="450" y="470" fill="#64748b" font-size="12" text-anchor="middle">Management VLANs (99) at both sites remain unrouted, same security principle as Lab 07</text>
+</svg>
